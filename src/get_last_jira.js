@@ -5,7 +5,7 @@
   
   const jql = `createdDate >= "${lastYr.year()}-${lastYr.month()+1}-${lastYr.date()}" && createdDate < "${dayAfter.year()}-${dayAfter.month()+1}-${dayAfter.date()}" && resolution = Unresolved  && reporter = currentUser()`
 console.log(jql)
-  const [first,...rest] = api.run("transposit_jira.jira.search", {jql: jql}, {limit:10});
+  const [first,...rest] = api.run("jira.search", {jql: jql}, {limit:10});
   if (!first) {
     return;
   }
