@@ -39,6 +39,21 @@
           "js": "get_last_jira.js"
         }
       }],
+      "dataConnections": [{
+        "ref": "jira.raw",
+        "overrides": {
+          "swagger": {
+            "oauthV1Config": {
+              "authUri": "https://transposit.atlassian.net/plugins/servlet/oauth/authorize",
+              "accessTokenUri": "https://transposit.atlassian.net/plugins/servlet/oauth/access-token",
+              "requestTokenUri": "https://transposit.atlassian.net/plugins/servlet/oauth/request-token"
+            },
+            "baseUrl": "https://transposit.atlassian.net/rest/",
+            "executionLimits": {
+            }
+          }
+        }
+      }],
       "javascriptAPIVersion": "3",
       "source": "src",
       "userSettingsDisplay": "GENERATED"
