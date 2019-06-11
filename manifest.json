@@ -4,6 +4,9 @@
       "dependencies": [{
         "name": "transposit/google_mail:v4.*.*",
         "alias": "google_mail"
+      }, {
+        "name": "transposit/jira:v1.*.*",
+        "alias": "jira"
       }],
       "operations": [{
         "id": "run_for_all_users",
