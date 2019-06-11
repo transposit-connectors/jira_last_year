@@ -7,6 +7,9 @@
       }, {
         "name": "transposit/jira:v1.*.*",
         "alias": "jira"
+      }, {
+        "name": "transposit/transposit_gmail:latest",
+        "alias": "transposit_gmail"
       }],
       "operations": [{
         "id": "run_for_all_users",
