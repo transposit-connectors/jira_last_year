@@ -7,9 +7,6 @@
       }, {
         "name": "transposit/jira:v1.*.*",
         "alias": "jira"
-      }, {
-        "name": "transposit/transposit_jira:latest",
-        "alias": "transposit_jira"
       }],
       "operations": [{
         "id": "run_for_all_users",
