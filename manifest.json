@@ -47,6 +47,7 @@
       }],
       "dataConnections": [{
         "ref": "jira.raw",
+        "requireConsumerSignin": true,
         "overrides": {
           "swagger": {
             "oauthV1Config": {
