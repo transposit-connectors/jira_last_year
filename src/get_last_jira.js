@@ -8,7 +8,7 @@
 	createdDate < "${dayAfter.year()}-${dayAfter.month()+1}-${dayAfter.date()}" && 
 	resolution = Unresolved  && reporter = currentUser()`;
 
-  const jira = api.run("transposit_jira.jira.search", {jql: jql}, {limit:1})[0];
+  const jira = api.run("jira.search", {jql: jql}, {limit:1})[0];
   if (!jira) {
     return;
   }

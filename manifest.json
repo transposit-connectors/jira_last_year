@@ -31,7 +31,7 @@
             "name": "to",
             "type": "STRING"
           }],
-          "tql": "SELECT * FROM transposit_gmail.google_mail.send_message\n  WHERE to=@to\n  AND subject=@subject\n  AND message=@message\n  AND `from`='hello@transposit.com'\n  AND contentType='text/html'\n"
+          "tql": "SELECT * FROM google_mail.send_message\n  WHERE to=@to\n  AND subject=@subject\n  AND message=@message\n  AND `from`='hello@transposit.com'\n  AND contentType='text/html'\n"
         }
       }, {
         "id": "get_last_jira",
