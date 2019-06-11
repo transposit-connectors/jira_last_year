@@ -8,9 +8,6 @@
         "name": "transposit/jira:v1.*.*",
         "alias": "jira"
       }, {
-        "name": "transposit/transposit_gmail:latest",
-        "alias": "transposit_gmail"
-      }, {
         "name": "transposit/transposit_jira:latest",
         "alias": "transposit_jira"
       }],
