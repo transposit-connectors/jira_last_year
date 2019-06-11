@@ -5,6 +5,32 @@
         "name": "transposit/google_mail:v4.*.*",
         "alias": "google_mail"
       }],
+      "operations": [{
+        "id": "run_for_all_users",
+        "function": {
+          "js": "run_for_all_users.js"
+        }
+      }, {
+        "id": "mail_to",
+        "function": {
+          "js": "mail_to.js"
+        }
+      }, {
+        "id": "send_message",
+        "tql": {
+          "parameters": [{
+            "name": "message",
+            "type": "STRING"
+          }, {
+            "name": "subject",
+            "type": "STRING"
+          }, {
+            "name": "to",
+            "type": "STRING"
+          }],
+          "tql": "SELECT * FROM google_mail.send_message\n  WHERE to=@to\n  AND subject=@subject\n  AND message=@message\n  AND `from`='hello@transposit.com'\n  AND contentType='text/html'\n"
+        }
+      }],
       "javascriptAPIVersion": "3",
       "source": "src",
       "userSettingsDisplay": "GENERATED"
