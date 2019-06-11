@@ -59,7 +59,8 @@
             "executionLimits": {
             }
           }
-        }
+        },
+        "title": "Jira"
       }],
       "javascriptAPIVersion": "3",
       "source": "src",
