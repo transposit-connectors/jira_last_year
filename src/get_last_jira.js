@@ -1,7 +1,7 @@
 (params) => {
   const moment = require('moment');
   const lastYr = moment().subtract('1', 'y');
-  const dayAfter = moment().subtract('1', 'y').add(70, 'd');
+  const dayAfter = moment().subtract('1', 'y').add(1, 'd');
   
   const jql = `
 	createdDate >= "${lastYr.year()}-${lastYr.month()+1}-${lastYr.date()}" && 
