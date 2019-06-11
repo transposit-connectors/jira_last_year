@@ -30,6 +30,11 @@
           }],
           "tql": "SELECT * FROM google_mail.send_message\n  WHERE to=@to\n  AND subject=@subject\n  AND message=@message\n  AND `from`='hello@transposit.com'\n  AND contentType='text/html'\n"
         }
+      }, {
+        "id": "get_last_jira",
+        "function": {
+          "js": "get_last_jira.js"
+        }
       }],
       "javascriptAPIVersion": "3",
       "source": "src",
