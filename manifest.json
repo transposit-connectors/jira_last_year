@@ -59,6 +59,8 @@
       "javascriptAPIVersion": "3",
       "source": "src",
       "userSettingsDisplay": "GENERATED"
-    }
+    },
+    "description": "This app emails its users with JIRA tickets that they filed 1 year ago that are still unresolved.",
+    "displayName": "JIRAs of Last Year"
   }
 }
