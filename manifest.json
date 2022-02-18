@@ -1,61 +1,74 @@
 {
   "v2": {
     "transposit": {
-      "dependencies": [{
-        "name": "transposit/google_mail:v4.*.*",
-        "alias": "google_mail"
-      }, {
-        "name": "transposit/jira:v1.*.*",
-        "alias": "jira"
-      }],
-      "operations": [{
-        "id": "run_for_all_users",
-        "function": {
-          "js": "run_for_all_users.js"
+      "dependencies": [
+        {
+          "name": "transposit/google_mail:v4.*.*",
+          "alias": "google_mail"
+        },
+        {
+          "name": "transposit/jira:v1.*.*",
+          "alias": "jira"
         }
-      }, {
-        "id": "mail_to",
-        "function": {
-          "js": "mail_to.js"
-        }
-      }, {
-        "id": "send_message",
-        "tql": {
-          "parameters": [{
-            "name": "message",
-            "type": "STRING"
-          }, {
-            "name": "subject",
-            "type": "STRING"
-          }, {
-            "name": "to",
-            "type": "STRING"
-          }],
-          "tql": "SELECT * FROM google_mail.send_message\n  WHERE to=@to\n  AND subject=@subject\n  AND message=@message\n  AND `from`='hello@transposit.com'\n  AND contentType='text/html'\n"
-        }
-      }, {
-        "id": "get_last_jira",
-        "function": {
-          "js": "get_last_jira.js"
-        }
-      }],
-      "dataConnections": [{
-        "ref": "jira.raw",
-        "requireConsumerSignin": true,
-        "overrides": {
-          "swagger": {
-            "oauthV1Config": {
-              "authUri": "https://transposit.atlassian.net/plugins/servlet/oauth/authorize",
-              "accessTokenUri": "https://transposit.atlassian.net/plugins/servlet/oauth/access-token",
-              "requestTokenUri": "https://transposit.atlassian.net/plugins/servlet/oauth/request-token"
-            },
-            "baseUrl": "https://transposit.atlassian.net/rest/",
-            "executionLimits": {
-            }
+      ],
+      "operations": [
+        {
+          "id": "run_for_all_users",
+          "function": {
+            "js": "run_for_all_users.js"
           }
         },
-        "title": "Jira"
-      }],
+        {
+          "id": "mail_to",
+          "function": {
+            "js": "mail_to.js"
+          }
+        },
+        {
+          "id": "send_message",
+          "tql": {
+            "parameters": [
+              {
+                "name": "message",
+                "type": "STRING"
+              },
+              {
+                "name": "subject",
+                "type": "STRING"
+              },
+              {
+                "name": "to",
+                "type": "STRING"
+              }
+            ],
+            "tql": "SELECT * FROM google_mail.send_message\n  WHERE to=@to\n  AND subject=@subject\n  AND message=@message\n  AND `from`='hello@transposit.com'\n  AND contentType='text/html'\n"
+          }
+        },
+        {
+          "id": "get_last_jira",
+          "function": {
+            "js": "get_last_jira.js"
+          }
+        }
+      ],
+      "dataConnections": [
+        {
+          "ref": "jira.raw",
+          "requireConsumerSignin": true,
+          "overrides": {
+            "swagger": {
+              "oauthV1Config": {
+                "authUri": "https://transposit.atlassian.net/plugins/servlet/oauth/authorize",
+                "accessTokenUri": "https://transposit.atlassian.net/plugins/servlet/oauth/access-token",
+                "requestTokenUri": "https://transposit.atlassian.net/plugins/servlet/oauth/request-token"
+              },
+              "baseUrl": "https://transposit.atlassian.net/rest/",
+              "executionLimits": {}
+            }
+          },
+          "title": "Jira"
+        }
+      ],
       "javascriptAPIVersion": "3",
       "source": "src",
       "userSettingsDisplay": "GENERATED"
